@@ -18,43 +18,48 @@ body {
 
 /* Estilos del encabezado */
 header {
-    background: url(/img/fondo4.JPG) no-repeat center;
+    position: relative; /* Necesario para posicionar elementos absolutamente dentro del header */
     margin: 0;
-    background-size: cover;
+    background: url(/img/fondo4.JPG) no-repeat center; /* Imagen de fondo */
+    background-size: cover; /* Cubre todo el header */
     height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
+    overflow: hidden; /* Oculta contenido que pueda desbordarse */
 }
 
 h1.main-title {
-    position: absolute;
-    top: 50%;
+    position: absolute; /* Posiciona el título absolutamente dentro del header */
+    top: 30%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* Centra el título */
     font-size: 3rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: #FFFFFF;
-    z-index: 1;
+    color: #000000;
+    z-index: 1; /* Asegura que el título esté sobre la imagen */
 }
 
 /* Estilos de la barra de navegación */
 nav.navbar {
     background-color: #FFFFFF;
-    position: fixed;
+    position: fixed; /* Fija la navegación en la parte superior */
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 100; /* Asegura que la navegación esté sobre otros elementos */
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 90px;
     padding: 0 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    /* No se necesitan estilos adicionales para el logo directamente */
 }
 
 .logo img {
@@ -103,7 +108,26 @@ nav.navbar {
     transform: scale(1.05);
 }
 
-/* Estilos de los títulos */
+/* Estilos de la sección de inicio */
+section#inicio.hero {
+    background-image: url(/img/);
+    background-color: #000000;
+    background-size: cover;
+    background-position: center;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 90px; /* Espacio para la barra de navegación fija */
+}
+
+section#inicio.hero p {
+    max-width: 800px;
+    margin: 20px auto 0;
+}
+
+/* Estilos de los títulos generales */
 h2.title {
     margin-bottom: 20px;
     font-size: 3rem;
@@ -112,7 +136,7 @@ h2.title {
     color: #FFFFFF;
 }
 
-/* Estilos de los párrafos */
+/* Estilos de los párrafos generales */
 p {
     margin-bottom: 30px;
     font-size: 1rem;
@@ -121,7 +145,7 @@ p {
     padding: 0 20px;
 }
 
-/* Estilos de los botones */
+/* Estilos de los botones generales */
 a.btn {
     display: inline-block;
     padding: 10px 20px;
@@ -139,24 +163,6 @@ a.btn:hover {
     background-color: transparent;
 }
 
-/* Estilos de la sección de inicio */
-section#inicio.hero {
-    background-color: #000000;
-    background-size: cover;
-    background-position: center;
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 90px; /* Ajuste para la altura de la barra de navegación fija */
-}
-
-section#inicio.hero p {
-    max-width: 800px;
-    margin: 20px auto 0;
-}
-
 /* Estilos de la sección "Quiénes Somos" */
 section#quienes-somos.about {
     background-color: #000000;
@@ -165,19 +171,19 @@ section#quienes-somos.about {
 }
 
 .methodology-container {
-    display: flex; /* Dispone los bloques uno al lado del otro */
-    flex-wrap: wrap; /* Permite que los bloques se envuelvan si no hay suficiente espacio */
-    justify-content: center; /* Centra los bloques horizontalmente */
-    gap: 20px; /* Espacio entre los bloques */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .methodology-item {
-    background-color: #1C1C1C; /* Fondo del recuadro */
+    background-color: #1C1C1C;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7), -5px -5px 15px rgba(10, 25, 47, 0.7); /* Borde difuminado negro y azul oscuro */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7), -5px -5px 15px rgba(10, 25, 47, 0.7);
     text-align: center;
-    max-width: 300px; /* Ancho máximo de cada bloque */
+    max-width: 300px;
 }
 
 .methodology-item h3 {
@@ -187,16 +193,16 @@ section#quienes-somos.about {
 }
 
 .methodology-item img {
-    width: 100%; /* La imagen ocupa todo el ancho del recuadro */
+    width: 100%;
     height: auto;
     object-fit: contain;
     border-radius: 5px;
-    margin-bottom: 10px; /* Espacio entre la imagen y la descripción */
-    transition: transform 0.3s ease-in-out; /* Transición para el efecto hover */
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .methodology-item img:hover {
-    transform: scale(1.05); /* Ligeramente más grande al pasar el mouse */
+    transform: scale(1.05);
 }
 
 .methodology-item p {
@@ -212,19 +218,19 @@ section#servicios.services {
 }
 
 .services-container {
-    display: flex; /* Dispone los bloques uno al lado del otro */
-    flex-wrap: wrap; /* Permite que los bloques se envuelvan si no hay suficiente espacio */
-    justify-content: center; /* Centra los bloques horizontalmente */
-    gap: 20px; /* Espacio entre los bloques */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .service-detail {
-    background-color: #1C1C1C; /* Fondo del recuadro */
+    background-color: #1C1C1C;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7), -5px -5px 15px rgba(10, 25, 47, 0.7); /* Borde difuminado negro y azul oscuro */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7), -5px -5px 15px rgba(10, 25, 47, 0.7);
     text-align: center;
-    max-width: 300px; /* Ancho máximo de cada bloque */
+    max-width: 300px;
 }
 
 .service-detail h3 {
@@ -234,16 +240,16 @@ section#servicios.services {
 }
 
 .service-detail img {
-    width: 100%; /* La imagen ocupa todo el ancho del recuadro */
+    width: 100%;
     height: auto;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 10px; /* Espacio entre la imagen y la descripción */
-    transition: transform 0.3s ease-in-out; /* Transición para el efecto hover */
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .service-detail img:hover {
-    transform: scale(1.05); /* Ligeramente más grande al pasar el mouse */
+    transform: scale(1.05);
 }
 
 .service-detail p {
@@ -416,130 +422,96 @@ footer p {
 }
 
 /* Media Queries para Responsividad */
-@media (max-width: 992px) {
-    .navbar h1 {
-        font-size: 20px;
-    }
-
-    .navbar a {
-        font-size: 18px;
-        padding: 8px 12px;
-    }
-
-    h2.title {
-        font-size: 2.5rem;
-    }
-
-    .contact-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contact-info,
-    .contact-form-container {
-        width: 90%;
-        max-width: 500px;
-    }
-
-    .methodology-container,
-    .services-container {
-        flex-direction: column; /* Apila los bloques en pantallas más pequeñas */
-        align-items: center; /* Centra los bloques en pantallas más pequeñas */
-    }
-
-    .methodology-item,
-    .service-detail {
-        width: 90%; /* Los bloques ocupan más ancho en pantallas pequeñas */
-        max-width: none; /* Elimina el ancho máximo en pantallas pequeñas */
-    }
-}
-
 @media (max-width: 768px) {
-    h1.main-title {
-        font-size: 2rem;
-    }
-
-    h2.title {
-        font-size: 2rem;
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .navbar li {
-        margin: 5px 0;
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
-        height: auto;
+    /* Estilos para pantallas con un ancho máximo de 768 píxeles (tablets y móviles) */
+    nav.navbar {
+        flex-direction: column; /* Apila el logo y el menú verticalmente */
+        align-items: center; /* Centra los elementos horizontalmente */
+        height: auto; /* Ajusta la altura automáticamente */
+        padding: 15px 10px; /* Ajusta el padding */
     }
 
     .logo {
-        margin-bottom: 10px;
-        width: 100%;
-        text-align: center;
+        margin-bottom: 5px; /* Añade un pequeño margen inferior al logo */
+        display: flex; /* Para alinear logo y título en la misma línea */
+        align-items: center; /* Centra verticalmente el logo y el título */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        justify-content: center; /* Centra el logo y el título */
+        flex-direction: row; /* Dispone logo y título en la misma fila */
+    }
+
+    .logo img {
+        margin-right: 10px; /* Añade margen derecho al logo para separarlo del título */
+        margin-bottom: 0; /* Elimina el margen inferior del logo */
     }
 
     .navbar h1 {
-        text-align: center;
-        width: 100%;
-        margin-bottom: 10px;
+        font-size: 20px; /* Reduce el tamaño del título */
+        margin-bottom: 0; /* Elimina el margen inferior del título */
+        text-align: left; /* Alinea el título a la izquierda junto al logo */
+    }
+
+    .navbar ul {
+        display: none; /* Oculta el menú por defecto en pantallas pequeñas */
+        flex-direction: column; /* Apila los elementos del menú verticalmente */
+        width: 100%; /* Ocupa todo el ancho del contenedor */
+        text-align: center; /* Centra el texto del menú */
+        border-radius: 10px; /* Borde redondeado */
+        background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco traslúcido */
+        margin-top: 10px; /* Espacio entre el botón de menú y las opciones */
+    }
+
+    .navbar:hover ul {
+        display: flex; /* Muestra el menú al pasar el ratón sobre la barra de navegación */
+    }
+
+    .navbar li {
+        margin: 5px 0; /* Espacio entre los elementos del menú */
+    }
+
+    .navbar a {
+        font-size: 18px; /* Reduce el tamaño de la fuente del menú */
+        padding: 10px 15px; /* Ajusta el padding de los enlaces del menú */
+        color: #000000; /* Asegura que el color del texto sea negro */
+    }
+
+    /* Estilo para el botón de menú (simulado con el primer li) */
+    .navbar ul li:first-child {
+        display: block; /* Muestra el primer li como bloque */
+        position: relative; /* Para posicionar la lista desplegable */
+        width: 100%; /* Ocupa todo el ancho */
+        padding: 10px 0; /* Padding superior e inferior */
+        text-align: center; /* Centra el texto "Menu" */
+        font-size: 20px; /* Tamaño de la fuente para "Menu" */
+        font-weight: bold; /* Texto en negrita */
+        color: #000000; /* Color del texto "Menu" */
+        background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco traslúcido */
+        border-radius: 10px; /* Bordes redondeados */
+        cursor: pointer; /* Cambia el cursor a una mano */
+        margin-bottom: 10px; /* Espacio inferior */
+    }
+
+    .navbar ul li:first-child a {
+        padding: 10px 15px; /* Asegura que el enlace dentro del "Menu" también tenga padding */
+    }
+
+    .navbar ul li:first-child:hover + ul {
+        display: flex; /* Muestra el menú al pasar el ratón sobre el primer li ("Menu") */
     }
 }
 
 @media (max-width: 500px) {
-    h1.main-title {
-        font-size: 1.5rem;
-        padding: 0 10px;
+    .logo {
+        flex-direction: row; /* Mantiene la disposición horizontal en pantallas muy pequeñas */
+        justify-content: center; /* Centra logo y título */
     }
 
-    h2.title {
-        font-size: 1.8rem;
+    .navbar h1 {
+        font-size: 18px; /* Reduce aún más el tamaño del título */
+        text-align: center; /* Centra el título */
     }
 
-    p {
-        font-size: 0.9rem;
-        padding: 0 10px;
-    }
-
-    .navbar ul {
-        align-items: center;
-    }
-
-    .navbar a {
-        font-size: 16px;
-    }
-
-    .contact-info,
-    .contact-form-container {
-        padding: 20px;
-    }
-
-    .contact-info p {
-        font-size: 1rem;
-    }
-
-    .social-links a {
-        font-size: 1rem;
-    }
-
-    .social-links a i {
-        font-size: 1.2rem;
-    }
-
-    .service-content img {
-        width: 100px;
-        height: 100px;
-    }
-
-    #whatsapp-fixed-link img {
-        width: 50px;
-        height: 50px;
+    .logo img {
+        margin-right: 5px; /* Reduce el margen derecho en pantallas más pequeñas */
     }
 }
